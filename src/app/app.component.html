@@ -1,0 +1,22 @@
+<button mat-raised-button color="primary" class="custom-button" (click)="toggleLista()">
+  {{ mostrarLista ? 'Ocultar' : 'Mostrar' }}
+</button>
+
+<div *ngIf="mostrarLista" class="custom-list">
+  <table>
+    <tr class="custom-list-header">
+      <th>Nombre</th>
+      <th>Costo</th>
+    </tr>
+    <ng-container *ngFor="let item of items">
+      <tr class="custom-list-item">
+        <td>{{ item.nombre }}</td>
+        <td>{{ '$' + item.costo }}</td>
+      </tr>
+    </ng-container>
+  </table>
+</div>
+
+
+
+
